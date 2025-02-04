@@ -11,32 +11,12 @@ const HomeScreen = () => {
       <View style={globalStyles.globalMargin}>
         <ScrollView>
           <Title text="Opciones del menú" safe />
-          {animationMenuItems.map((item, index) => (
+          {buttonsMenuItems.map((item, index) => (
             <MenuItem
               key={item.name}
               {...item}
               isFirst={index === 0}
-              isLast={index === animationMenuItems.length - 1}
-            />
-          ))}
-
-          <View style={{marginTop: 24}} />
-          {menuItems.map((item, index) => (
-            <MenuItem
-              key={item.name}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === menuItems.length - 1}
-            />
-          ))}
-
-          <View style={{marginTop: 24}} />
-          {uiMenuItems.map((item, index) => (
-            <MenuItem
-              key={item.name}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === uiMenuItems.length - 1}
+              isLast={index === buttonsMenuItems.length - 1}
             />
           ))}
         </ScrollView>
@@ -46,6 +26,15 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
+
+const buttonsMenuItems = [
+  {
+    name: 'Ride Button',
+    icon: 'cube-outline',
+    component: 'ButtonScreen',
+  },
+];
+
 
 const animationMenuItems = [
   {
